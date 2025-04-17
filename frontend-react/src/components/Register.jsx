@@ -30,7 +30,7 @@ const Register = () => {
             setErrors(error.response.data)
             console.error('Registration error: ', error.response.data)
         }finally{
-            setLoadind(false)
+            setLoading(false)
         }
     }
 
@@ -54,7 +54,7 @@ const Register = () => {
                     <small>{errors.password && <div className='text-danger'>{errors.password}</div>}</small>
                     </div>
                     {success && <div className='alert alert-success'>Registration Successful</div>}
-                    {loadind ? (
+                    {loading ? (
                      <button type="submit" className='btn btn-info d-block mx-auto' disabled><FontAwesomeIcon icon={faSpinner} spin />Please wait...</button>
                     ) : (
                     <button type="submit" className='btn btn-info d-block mx-auto'>Register</button>
